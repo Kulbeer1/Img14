@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Effect</title>
+    <style>
+        #box{
+            width: 750px;
+            height: 650px;
+            border: 10px solid navy;
+            margin: 20px auto;
+            box-sizing: border-box;
+            padding: 10px;
+           
+
+        }
+        .tool{
+            width: 215px;
+            height: 110px;
+            display: flex;
+            border: 10px solid navy;
+            margin: 20px auto;
+            box-sizing: border-box;
+            padding: 10px;
+            display: inline-block;
+            
+        }
+        p{
+            text-align: center;
+        }
+        #pic{
+            width: 700px;
+            box-sizing: border-box;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="background (5).jpg" id="pic">
+        <div class="tool">
+            <p>Brightness</p>
+            <input type="range" id="bright" min="0" max="200" oninput="bright()">
+        </div>
+        <div class="tool">
+            <p>Contrast</p>
+            <input type="range" id="contrast" min="0" max="400" oninput="contrast()">
+        </div>
+        <div class="tool">
+            <p>Saturate</p>
+            <input type="range" id="saturate" min="0" max="600" oninput="saturate()">
+        </div>
+    </div>
+    <script>
+        function bright(){
+            var x = document.getElementById("bright").value;
+            var pic = document.getElementById("pic");
+            pic.style.filter ="brightness("+x+"%)";
+        }
+        function contrast(){
+            var x = document.getElementById("contrast").value;
+            var pic = document.getElementById("pic");
+            pic.style.filter ="contrast("+x+"%)";
+        }
+        function saturate(){
+            var x = document.getElementById("saturate").value;
+            var pic = document.getElementById("pic");
+            pic.style.filter ="saturate("+x+"%)";
+        }
+    </script>
+
+    
+</body>
+</html>
